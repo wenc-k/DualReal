@@ -43,6 +43,20 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <style>
+    /* 自定义居中样式 */
+    .centered-container {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    /* 确保所有子元素继承居中 */
+    .centered-container * {
+      max-width: 100%;
+    }
+  </style>
 </head>
 <body>
 
