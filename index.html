@@ -48,13 +48,20 @@
     .centered-container {
       display: flex !important;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
+      width: 100%;
+      padding: 0 20%; /* 左右20%留白 */
+    }
+    .content-constrained {
+      width: 100%;
+      max-width: 1600px; /* 可选最大宽度限制 */
+      margin: 0 auto;
+      text-align: center; /* 继承居中 */
     }
     /* 确保所有子元素继承居中 */
-    .centered-container * {
-      max-width: 90%;
+    .centered-container > * {
+      width: 100% !important;
+      max-width: none !important;
     }
   </style>
 </head>
