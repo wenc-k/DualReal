@@ -23,8 +23,7 @@ cd DualReal
 
 
 ## Environment
-All the tests are conducted in Linux. We suggest running our code in Linux. 
-To set up our environment in Linux, please run:
+All the tests are conducted in Linux. To set up our environment in Linux, please run:
 ```
 conda create -n dualreal python=3.10 -y
 conda activate dualreal
