@@ -2,14 +2,14 @@
 
 🎉🎉 Our paper, “DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video
 Customization” accepted by ICCV 2025!
-**Our [demo page](https://wenc-k.github.io/dualreal/).**
+**Our [project page](https://wenc-k.github.io/dualreal-customization/).**
 
 ## Showcase
 
 
 ## TODO List
 
-- [x] Release the paper and demo page. Visit [https://wenc-k.github.io/dualreal/](https://wenc-k.github.io/dualreal/) 
+- [x] Release the paper and project page. Visit [https://wenc-k.github.io/dualreal-customization/](https://wenc-k.github.io/dualreal-customization/) 
 - [x] Release the code.
 
 
@@ -23,7 +23,8 @@ cd DualReal
 
 
 ## Environment
-All the tests are conducted in Linux. We suggest running our code in Linux. To set up our environment in Linux, please run:
+All the tests are conducted in Linux. We suggest running our code in Linux. 
+To set up our environment in Linux, please run:
 ```
 conda create -n dualreal python=3.10 -y
 conda activate dualreal
