@@ -46,7 +46,7 @@ pip install -e .
 2. please download the open_clip_pytorch_model.bin from [here](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/tree/main), and put the file under `DualReal/train/pretrained`, it should look like `DualReal/train/pretrained/open_clip_pytorch_model.bin`
 
 
-## Training Instructions
+## Training
 1. a sample test case is provided under the following directory: train/test_data/
 
 2. start test training by executing:
