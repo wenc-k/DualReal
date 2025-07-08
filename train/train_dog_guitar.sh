@@ -17,7 +17,7 @@ accelerate launch --config_file train/config/finetune_adapter_single.yaml --mult
   train/train_adapter.py \
   --gradient_checkpointing \
   --pretrained_model_name_or_path $MODEL_PATH \
-  --cache_dir "~/.cache" \
+  --cache_dir ".cache" \
   --enable_tiling \
   --enable_slicing \
   --caption_column_id prompts.txt \

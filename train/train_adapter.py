@@ -670,7 +670,6 @@ class VideoDataset_for_id(Dataset):
                 frames = video_reader.get_batch(indices)
                 ref_frame = video_reader_refimg.get_batch(indices)
 
-            print("id dataset, length of ref_frame******", len(ref_frame))
             ref_idx = 0 # 只有一帧
             mid_frame = copy(ref_frame[ref_idx])
             mid_frame = mid_frame.float()

@@ -747,7 +747,6 @@ class CogVideoXTransformer3DModelWithAdapter(ModelMixin, ConfigMixin, PeftAdapte
             context_image = context_image.repeat_interleave(repeats=hidden_states.size(1)+encoder_hidden_states.size(1),dim=1)
 
         if self._controller:
-            print(highlight_color+"using weight transformer controller.....")
             cat_video_txt_features = torch.cat([encoder_hidden_states, hidden_states], dim=1)
             alpha = self.controller(timestep=emb, hidden_states=cat_video_txt_features)
             beta = self.controller.scale - alpha #[B, n]
@@ -756,9 +755,6 @@ class CogVideoXTransformer3DModelWithAdapter(ModelMixin, ConfigMixin, PeftAdapte
         for i, block in enumerate(self.transformer_blocks):
             if self._controller:
                 dynamic_alpha_beta = self.get_dynamic_weight(alpha=alpha, beta=beta, block_num=i, length_model=len(self.transformer_blocks))
-            
-            if dynamic_alpha_beta and i == 20:
-                print(highlight_color+f"id alpha: {dynamic_alpha_beta[0].tolist()}, motion beta: {dynamic_alpha_beta[1].tolist()} in block 21")
 
             if self.training and self.gradient_checkpointing:
                 def create_custom_forward(module):
