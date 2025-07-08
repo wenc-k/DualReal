@@ -47,9 +47,44 @@ pip install -e .
 2. please download the open_clip_pytorch_model.bin from [here](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/tree/main), and put the file under `DualReal/train/pretrained`, it should look like `DualReal/train/pretrained/open_clip_pytorch_model.bin`
 
 
+## Training Instructions
+1. a sample test case is provided under the following directory: train/test_data/
 
-## Customize your Identity and Motion!
+2. start test training by executing:
 
+```
+bash train_dog_guitar.sh
+```
+
+This script will automatically load the test data and begin the training process with the default configuration.
+
+## Customize Your Identity and Motion!
+1. first, you need to prepare your dataset.
+
+```
+identity/motion
+├── videos
+├── prompts.txt
+├── videos.txt
+```
+
+- `videos`: Contains the video files
+- `prompts.txt`: Contains the prompts
+- `videos.txt`: Contains the list of video files in the videos/ directory
+
+
+2. make sure to update the following path variables in `train_{}_{}.sh` to match your own dataset structure:
+- `ID_PATH`: Path to the subject identity image(s)
+- `REF_PATH`: Path to the reference appearance images (for motion adapter)
+- `MOTION_PATH`: Path to the motion videos
+- `OUTPUT_PATH`: Directory where training results and checkpoints will be saved
+
+3. start training by executing:
+```
+
+bash train_{}_{}.sh
+
+```
 
 
 ## Citation:
