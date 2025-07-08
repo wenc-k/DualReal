@@ -1650,7 +1650,6 @@ def main(args):
 
             if (check_motion and args.use_motion_condition) or (check_id and args.use_id_condition):
                 condition_flag = True
-
             if condition_flag:
                 print(highlight_color+"use condition in current module...")
                 y_image = batch["vit_frames"].to(dtype=weight_dtype)

@@ -11,7 +11,7 @@ class FrozenOpenCLIPCustomEmbedder(nn.Module):
     def __init__(self, pretrained, vit_resolution=(224, 224), arch="ViT-H/14", device="cuda",
                  freeze=True):
         super().__init__()
-        model, _, preprocess = open_clip.create_model_and_transforms(arch, pretrained=pretrained) #适用绝对路径
+        model, _, preprocess = open_clip.create_model_and_transforms(arch, pretrained=pretrained)
         self.model = model
         data_white = np.ones((vit_resolution[0], vit_resolution[1], 3), dtype=np.uint8)*255
         self.white_image = preprocess(T.ToPILImage()(data_white)).unsqueeze(0)

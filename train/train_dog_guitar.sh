@@ -2,11 +2,12 @@
 cd ..
 export PYTHONPATH=$(pwd):$PYTHONPATH
 
-CUDA_VISIBLE_DEVICES=1
+CUDA_VISIBLE_DEVICES=
 export TRAIN_STEP=1000
 export MODEL_PATH='CogVideoX-5b'
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES
+
 export ID_PATH='train/test_data/identity/dog'
 export REF_PATH='train/test_data/identity/dog/images/00.png'
 export MOTION_PATH='train/test_data/motion/playingGuitar'
