@@ -57,16 +57,27 @@ bash train_dog_guitar.sh
 
 This script will automatically load the test data and begin the training process with the default configuration.
 
+## Inference
+1. make sure to update the following path variables in `inference/run.sh`:
+- `ADAPTER_PATH`: Path to the trained `.pth` file containing the weights of both the adapter and controller modules
+- `PROMPT_PATH`: Path to the text file where each line specifies the prompt used for a corresponding inference case
+- `REF_IMG_PATH`: Path to the reference appearance image (for motion adapter)
+- `OUTPUT_PATH`: Directory where inference results will be saved
+
+2. start inference by executing:
+```
+bash inference/run.sh
+```
+
 ## Customize Your Identity and Motion!
 1. first, you need to prepare your dataset.
-
 ```
-identity/motion
-├── videos
-├── prompts.txt
-├── videos.txt
+data
+  ├──identity(motion)
+        ├── videos
+        ├── prompts.txt
+        ├── videos.txt
 ```
-
 - `videos`: Contains the video files
 - `prompts.txt`: Contains the prompts
 - `videos.txt`: Contains the list of video files in the videos/ directory
@@ -74,15 +85,13 @@ identity/motion
 
 2. make sure to update the following path variables in `train_{}_{}.sh` to match your own dataset structure:
 - `ID_PATH`: Path to the subject identity image(s)
-- `REF_PATH`: Path to the reference appearance images (for motion adapter)
+- `REF_PATH`: Path to the reference appearance image (for motion adapter)
 - `MOTION_PATH`: Path to the motion videos
 - `OUTPUT_PATH`: Directory where training results and checkpoints will be saved
 
 3. start training by executing:
 ```
-
-bash train_{}_{}.sh
-
+bash train/train_{}_{}.sh
 ```
 
 
