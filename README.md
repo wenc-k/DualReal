@@ -73,7 +73,7 @@ bash inference/run.sh
 1. first, you need to prepare your dataset.
 ```
 data
-  ├──identity(motion)
+  ├──identity-A (motion-B)
         ├── videos
         ├── prompts.txt
         ├── videos.txt
@@ -84,9 +84,9 @@ data
 
 
 2. make sure to update the following path variables in `train_{}_{}.sh` to match your own dataset structure:
-- `ID_PATH`: Path to the subject identity image(s)
+- `ID_PATH`: Path to the subject identity images (identity-A)
 - `REF_PATH`: Path to the reference appearance image (for motion adapter)
-- `MOTION_PATH`: Path to the motion videos
+- `MOTION_PATH`: Path to the motion videos (motion-B)
 - `OUTPUT_PATH`: Directory where training results and checkpoints will be saved
 
 3. start training by executing:
