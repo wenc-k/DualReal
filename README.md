@@ -10,7 +10,8 @@ Customization” accepted by ICCV 2025!
 ## TODO List
 
 - [x] Release the paper and project page. Visit [https://wenc-k.github.io/dualreal-customization/](https://wenc-k.github.io/dualreal-customization/) 
-- [x] Release the code.
+- [x] Release the inference code.
+- [x] Release the training code.
 
 
 ## Requirements
@@ -63,10 +64,12 @@ This script will automatically load the test data and begin the training process
 - `PROMPT_PATH`: Path to the text file where each line specifies the prompt used for a corresponding inference case
 - `REF_IMG_PATH`: Path to the reference appearance image (for motion adapter)
 - `OUTPUT_PATH`: Directory where inference results will be saved
+- `CLIP_PATH`: **Absolute Path** to the pre-trained CLIP model. (e.g., {}/DualReal/train/pretrained/open_clip_pytorch_model.bin )
+
 
 2. start inference by executing:
 ```
-bash inference/run.sh
+bash run.sh
 ```
 
 ## Customize Your Identity and Motion!
@@ -91,7 +94,7 @@ data
 
 3. start training by executing:
 ```
-bash train/train_{}_{}.sh
+bash train_{}_{}.sh
 ```
 
 
