@@ -249,15 +249,15 @@ class CogVideoXBlockWithAdapter(nn.Module):
 
         # add hidden_states separately 
         if id_flag:
-                id_adapter_hidden_states = id_weight * id_adapter_hidden_states
-                id_adapter_encoder_hidden_states = id_weight * id_adapter_encoder_hidden_states
+            id_adapter_hidden_states = id_weight * id_adapter_hidden_states
+            id_adapter_encoder_hidden_states = id_weight * id_adapter_encoder_hidden_states
         
         if motion_flag:
-                motion_adapter_hidden_states = motion_weight * motion_adapter_hidden_states
-                motion_adapter_encoder_hidden_states = motion_weight * motion_adapter_encoder_hidden_states
+            motion_adapter_hidden_states = motion_weight * motion_adapter_hidden_states
+            motion_adapter_encoder_hidden_states = motion_weight * motion_adapter_encoder_hidden_states
 
         # add hidden_states separately
-        attn_hidden_states = attn_hidden_states + id_adapter_hidden_states
+        attn_hidden_states = attn_hidden_states + id_adapter_hidden_states + motion_adapter_hidden_states
         attn_encoder_hidden_states = attn_encoder_hidden_states + id_adapter_encoder_hidden_states + motion_adapter_encoder_hidden_states
 
         hidden_states = hidden_states + gate_msa * attn_hidden_states
@@ -303,7 +303,7 @@ class CogVideoXBlockWithAdapter(nn.Module):
             motion_adapter_output = motion_weight * motion_adapter_output
         
         # add hidden_states separately
-        ff_output = ff_output + id_adapter_output
+        ff_output = ff_output + id_adapter_output + motion_adapter_output
 
         hidden_states = hidden_states + gate_ff * ff_output[:, text_seq_length:]
         encoder_hidden_states = encoder_hidden_states + enc_gate_ff * ff_output[:, :text_seq_length]

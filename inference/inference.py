@@ -302,7 +302,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--clip_pretrained",
         type=str,
-        default="../train/pretrained/open_clip_pytorch_model.bin",
+        default="",
     )
     parser.add_argument(
         "--adapter_path",
