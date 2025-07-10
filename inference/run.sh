@@ -5,9 +5,9 @@ CUDA_VISIBLE_DEVICES=
 export CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES
 export CLIP_PATH=''
 export ADAPTER_PATH=''
+export PROMPT_PATH=''
+export REF_IMG_PATH=''
 export OUTPUT_PATH='output'
-export PROMPT_PATH='dog_guitar/test_prompt.txt'
-export REF_IMG_PATH='dog_guitar/reference.png'
 
 python -m inference.inference \
   --pretrained_model_name_or_path "./CogVideoX-5b" \

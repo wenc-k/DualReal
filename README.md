@@ -4,13 +4,11 @@
 Customization” accepted by ICCV 2025!
 **Our [project page](https://wenc-k.github.io/dualreal-customization/).**
 
-## Showcase
-
-
 ## TODO List
 
 - [x] Release the paper and project page. Visit [https://wenc-k.github.io/dualreal-customization/](https://wenc-k.github.io/dualreal-customization/) 
 - [x] Release the inference code.
+- [x] Release test cases with our pretrained model, prompts, and reference image.
 - [x] Release the training code.
 
 
@@ -44,7 +42,25 @@ pip install -e .
 ## Checkpoints
 1. please download the pre-trained CogVideoX-5b checkpoints from [here](https://huggingface.co/THUDM/CogVideoX-5b), and put the whole folder under `DualReal`, it should look like `DualReal/CogVideoX-5b`
 
-2. please download the open_clip_pytorch_model.bin from [here](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/tree/main), and put the file under `DualReal/train/pretrained`, it should look like `DualReal/train/pretrained/open_clip_pytorch_model.bin`
+2. please download the open_clip_pytorch_model.bin from [here](https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K/tree/main), and put the file under `train/pretrained/`, it should look like `DualReal/train/pretrained/open_clip_pytorch_model.bin`
+
+3. We provide sample test cases with customization weights (e.g., *dog & guitar and penguin & skateboarding*) from [here](https://huggingface.co/wenc-k/DualReal/tree/main), please put the file under `inference/pretrained_customization/`
+
+
+## Inference
+1. make sure to update the following path variables in `inference/run.sh`:
+- `ADAPTER_PATH`: Path to the trained `.pth` file containing the weights of both the adapter and controller modules
+- `PROMPT_PATH`: Path to the text file where each line specifies the prompt used for a corresponding inference case
+- `REF_IMG_PATH`: Path to the reference appearance image (for motion adapter)
+- `OUTPUT_PATH`: Directory where inference results will be saved
+- `CLIP_PATH`: **Absolute Path** to the pre-trained CLIP model. (e.g., {}/DualReal/train/pretrained/open_clip_pytorch_model.bin )
+
+2. you can use the provided test weights, prompts, and reference images for inference.
+
+3. start inference by executing:
+```
+bash run.sh
+```
 
 
 ## Training
@@ -57,20 +73,6 @@ bash train_dog_guitar.sh
 ```
 
 This script will automatically load the test data and begin the training process with the default configuration.
-
-## Inference
-1. make sure to update the following path variables in `inference/run.sh`:
-- `ADAPTER_PATH`: Path to the trained `.pth` file containing the weights of both the adapter and controller modules
-- `PROMPT_PATH`: Path to the text file where each line specifies the prompt used for a corresponding inference case
-- `REF_IMG_PATH`: Path to the reference appearance image (for motion adapter)
-- `OUTPUT_PATH`: Directory where inference results will be saved
-- `CLIP_PATH`: **Absolute Path** to the pre-trained CLIP model. (e.g., {}/DualReal/train/pretrained/open_clip_pytorch_model.bin )
-
-
-2. start inference by executing:
-```
-bash run.sh
-```
 
 ## Customize Your Identity and Motion!
 1. first, you need to prepare your dataset.
