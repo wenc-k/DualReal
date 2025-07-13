@@ -1,8 +1,8 @@
 # DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization
 
-<video src="https://github.com/wenc-k/dualreal-customization/releases/download/demo/demo.mp4" controls style="max-width: 100%; height: auto; border-radius: 4px;">
-  Your browser does not support the video tag.
-</video>
+
+https://github.com/wenc-k/dualreal-customization/releases/download/demo/demo.mp4
+
 
 🎉🎉 Our paper, “DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video
 Customization” accepted by ICCV 2025!
