@@ -2,6 +2,11 @@
 
 ![Demo Video](https://github.com/wenc-k/dualreal-customization/releases/download/demo/demo.mp4)
 
+
+https://github.com/user-attachments/assets/041c01c9-4828-42de-8703-769ff59a9370
+
+
+
 🎉🎉 Our paper, “DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video
 Customization” accepted by ICCV 2025!
 **Our [project page](https://wenc-k.github.io/dualreal-customization/).**
