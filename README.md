@@ -1,4 +1,7 @@
 # DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization
+<a href="https://wenc-k.github.io/dualreal-customization/"><img src="https://img.shields.io/static/v1?label=Project&message=Website&color=blue"></a>
+<a href="https://arxiv.org/pdf/2505.02192"><img src="https://img.shields.io/badge/arXiv-2505.02192-b31b1b.svg"></a>
+<a href="https://www.apache.org/licenses/LICENSE-2.0.txt"><img src="https://img.shields.io/badge/License-Apache-yellow"></a>
 
 https://github.com/user-attachments/assets/041c01c9-4828-42de-8703-769ff59a9370
 
