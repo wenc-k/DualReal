@@ -12,7 +12,7 @@ Customization” accepted by ICCV 2025!
 
 ## TODO List
 
-- [x] Release the paper and project page. Visit [https://wenc-k.github.io/dualreal-customization/](https://wenc-k.github.io/dualreal-customization/) 
+- [x] Release the paper and project page.
 - [x] Release the inference code.
 - [x] Release test cases with our pretrained model, prompts, and reference image.
 - [x] Release the training code.
